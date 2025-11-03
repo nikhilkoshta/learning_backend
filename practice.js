@@ -25,4 +25,28 @@ const quizResults = [
 
 
 const finalScore = quizResults
-.filter(attempt => attempt.score >= 70).map()
+    .filter(attempt => attempt.score >= 70)
+    .map(attempt => attempt.score - attempt.penalty)
+    .reduce((total, points) => total + points, 0);
+
+console.log(finalScore);
+
+
+//practice :
+const transactions = [
+  { id: 101, type: 'credit', amount: 50 },
+  { id: 102, type: 'debit', amount: 20 },
+  { id: 103, type: 'credit', amount: 150 },
+  { id: 104, type: 'debit', amount: 10 },
+  { id: 105, type: 'credit', amount: 80 }
+];
+
+const finalAmount = transactions
+   .filter(creditAmount => creditAmount.type === 'credit')
+   .map(creditAmount => creditAmount.amount - 5)
+   .reduce((total, creditAmount) => total + creditAmount, 0);
+
+console.log(finalAmount);
+
+
+
