@@ -14,7 +14,7 @@ const schema = z.object({
     email: z.string(),
     password: z.string(),
     country: z.literal("IN").or(z.literal("US")),
-    kidneys: z.array(z.number());
+    kidneys: z.array(z.number())
 })
 
 const app = express();

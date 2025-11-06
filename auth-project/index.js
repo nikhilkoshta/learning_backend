@@ -79,8 +79,24 @@ app.get('/users', function(req, res) {
     const token = req.headers.authorization;
     try {
         const decoded = jwt.verify(token, jwtPassword);
-    } catch {
-        res.status(403);
+        const username = decoded.username;
+
+        //return a list of users other than this user    
+        res.status(200).json({
+            users: ALL_USERS.filter(function(value) {
+                if (value.username == username) {
+                    return false
+                } else {
+                    return true;
+                }
+            })
+        })
+            
+        
+    } catch (err) {
+        return res.status(403).json({
+            msg: "Invalid token"
+        });
     }
 })
 
