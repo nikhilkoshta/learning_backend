@@ -8,12 +8,12 @@ const User = mongoose.model('Users', {
     email: String
 });
 
-app.post("/signup", function(req, res) {
+app.post("/signup", async function(req, res) {
     const username = req.body.username;
     const password = req.body.password;
     const name = req.body.name;
 
-    const existingUser = User.findOne({ email: username });
+    const existingUser = await User.findOne({ email: username });
     if (existingUser) {
         return res.status(400).send("Username already exists");
     }
