@@ -1,0 +1,31 @@
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb+srv://nikhilkoshta2:nikhil2706harsh@cluster0.hp7bjuh.mongodb.net");
+
+const User = mongoose.model('Users', {
+    name: String,
+    password: String,
+    email: String
+});
+
+app.post("/signup", function(req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+    const name = req.body.name;
+
+    const existingUser = User.findOne({ email: username });
+    if (existingUser) {
+        return res.status(400).send("Username already exists");
+    }
+
+    const user = new User({
+        name: name,
+        email: username,
+        password: password
+    })
+
+    user.save();
+    res.json({
+        "msg": "User created successfully."
+    })
+})
