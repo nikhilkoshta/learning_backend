@@ -1,6 +1,6 @@
 FROM node:16-alpine
 
-WORKDIR /end-to-end project
+WORKDIR /auth-project
 
 COPY . .
 
