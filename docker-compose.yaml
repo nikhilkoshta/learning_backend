@@ -21,3 +21,8 @@ backend:
 
 volumes:
   mongodb_data
+
+
+
+
+# coomand to run this - docker compose up
