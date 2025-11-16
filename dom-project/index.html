@@ -7,25 +7,31 @@
 </head>
 <body>
 
-    <script>
-        let firstBox = document.getElementById("box1");
-        let num1 = firstBox.value;
-        let secondBox = document.getElementById("box2");
-        let num2 = secondBox.value;
-        function calculateSum(num1, num2) {
-            const answer = num1 + num2;
-
-            const newH1 = document.createElement('h1');
-
-            return document.getElementById("answerDiv").appendChild(newH1).textContent(answer);
-        }
-    </script>
-
     <input type="text" name="number" id="box1" placeholder="Type the first number">
     <input type="text" name="number" id="box2" placeholder="Type the second number">
 
-    <button id="calculate" onclick="calculateSum">Calculate Sum</button>
+    <button id="calculate" onclick="calculateSum()">Calculate Sum</button>
 
     <div id="answerDiv"></div>
+
+    <script>
+        function calculateSum() {
+            let firstBox = document.getElementById("box1");
+            let secondBox = document.getElementById("box2");
+            let num1 = parseFloat(firstBox.value) || 0;
+            let num2 = parseFloat(secondBox.value) || 0;
+
+            const answer = num1 + num2;
+
+            const answerDiv = document.getElementById("answerDiv");
+            answerDiv.innerHTML = '';
+
+            const newH1 = document.createElement('h1');
+
+            newH1.textContent = answer;
+
+            answerDiv.appendChild(newH1);
+        }
+    </script>
 </body>
 </html>
