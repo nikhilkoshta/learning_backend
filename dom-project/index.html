@@ -12,7 +12,7 @@
         let num1 = firstBox.value;
         let secondBox = document.getElementById("box2");
         let num2 = secondBox.value;
-        function onClick(num1, num2) {
+        function calculateSum(num1, num2) {
             const answer = num1 + num2;
 
             const newH1 = document.createElement('h1');
@@ -24,7 +24,7 @@
     <input type="text" name="number" id="box1" placeholder="Type the first number">
     <input type="text" name="number" id="box2" placeholder="Type the second number">
 
-    <button id="calculate">Calculate Sum</button>
+    <button id="calculate" onclick="calculateSum">Calculate Sum</button>
 
     <div id="answerDiv"></div>
 </body>
