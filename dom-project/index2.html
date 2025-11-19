@@ -20,6 +20,16 @@
             const b = document.getElementById("box2").value;
 
             const element = document.getElementById("answerDiv");
+
+            fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+                .then(function(response) {
+                    response.text()
+                        .then(function(ans) {
+                            element.innerHTML = ans;
+                        })
+                })
+
+            
         }
     </script>
 </body>
