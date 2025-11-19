@@ -7,14 +7,22 @@
 </head>
 <body>
 
-    <input type="text" name="number" id="box1" placeholder="Type the first number">
-    <input type="text" name="number" id="box2" placeholder="Type the second number">
+    <input oninput="debouncedCalcSum()" type="text" name="number" id="box1" placeholder="Type the first number">
+    <input oninput="debouncedCalcSum()" type="text" name="number" id="box2" placeholder="Type the second number">
 
-    <button id="calculate" onclick="calculateSum()">Calculate Sum</button>
+    <!-- <button id="calculate" onclick="calculateSum()">Calculate Sum</button> -->
 
     <div id="answerDiv"></div>
 
     <script>
+        let timeout;
+        function debouncedCalcSum() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                calculateSum()
+            }, 100);
+        }
+
         function calculateSum() {
             const a = document.getElementById("box1").value;
             const b = document.getElementById("box2").value;
