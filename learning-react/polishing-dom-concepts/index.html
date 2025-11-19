@@ -2,15 +2,19 @@
     <body>
         <script>
             function addTodo() {
+                const title = document.getElementById("title").value;
+                const desc = document.getElementById("desc").value;
 
             }
         </script>
 
 
         <div>
-            <input type="text" placeholder="title">
+            <input id="title" type="text" placeholder="title">
             <br>
-            <input type="text" placeholder="desc">
+            <br>
+            <input id="desc" type="text" placeholder="desc">
+            <br>
             <br>
             <button onclick="addTodo()">Add todo</button>
         </div>
