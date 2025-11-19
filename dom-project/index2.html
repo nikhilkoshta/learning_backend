@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <input type="text" name="number" id="box1" placeholder="Type the first number">
+    <input type="text" name="number" id="box2" placeholder="Type the second number">
+
+    <button id="calculate" onclick="calculateSum()">Calculate Sum</button>
+
+    <div id="answerDiv"></div>
+
+    <script>
+        function calculateSum() {
+            const a = document.getElementById("box1").value;
+            const b = document.getElementById("box2").value;
+
+            const element = document.getElementById("answerDiv");
+        }
+    </script>
+</body>
+</html>
