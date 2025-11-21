@@ -8,12 +8,13 @@ function App() {
 
   return (
     <>
+    <h1>Count is {count}</h1>
       <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
+        Increase
       </button>
 
       <button onClick={() => setCount((count) => count - 1)}>
-        Reduce {count}
+        Reduce
       </button>
     </>
   )
