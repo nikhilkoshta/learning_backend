@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ColorPicker() {
-  const [color, setColor] = useState("#ff0000ff");
+  const [color, setColor] = useState("#ffffffff");
 
   return (
     <div style={{ backgroundColor: color, height: "100vh", textAlign: "center" }}>
