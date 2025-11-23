@@ -4,7 +4,7 @@ function ColorPicker() {
   const [color, setColor] = useState("#ffffffff");
 
   return (
-    <div style={{ backgroundColor: color, height: "100vh", textAlign: "center" }}>
+    <div style={{ backgroundColor: color, height: "120vh", textAlign: "center" }}>
       <h2>Color Picker</h2>
       <input
         type="color"
