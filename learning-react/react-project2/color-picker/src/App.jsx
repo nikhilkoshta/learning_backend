@@ -5,7 +5,7 @@ function ColorPicker() {
 
   return (
     <div style={{ backgroundColor: color, height: "120vh", textAlign: "center" }}>
-      <h2>Color Picker</h2>
+      <h2>Color Picker App</h2>
       <input
         type="color"
         value={color}
