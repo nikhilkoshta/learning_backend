@@ -2,7 +2,8 @@ const { Router } = require("express");
 const adminMiddleware = require("../middleware/admin");
 const router = Router();
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = require("..");
+const { JWT_SECRET } = require("../config");
+
 
 // Admin Routes
 router.post('/signup', async (req, res) => {
