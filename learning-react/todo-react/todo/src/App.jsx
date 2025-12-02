@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import { Button } from './ui-components/CustomButton'
+import CustomButton from './ui-components/CustomButton'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Button onClick={onClickHandler} count={count} setCount={setCount}/>
+      <CustomButton count={count} setCount={setCount}/>
     </>
   )
 }

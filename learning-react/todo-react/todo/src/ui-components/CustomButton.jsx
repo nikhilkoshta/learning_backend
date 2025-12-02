@@ -4,6 +4,6 @@ export default function CustomButton(props) {
     }
 
     return (
-        <button>Counter {props.count}</button>
+        <button onClick={onClickHandler}>Counter {props.count}</button>
     )
 }
